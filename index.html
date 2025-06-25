@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SMXTREME</title>
+
+        <link rel="icon" href="./assets/favcon.svg" type="image/x-icon" />
+        <link rel="shortcut icon" href="./assets/favcon.svg" type="image/x-icon" />
+        <link rel="alternate icon" href="./assets/favcon.ico" type="image/x-icon" />
+        <link rel="apple-touch-icon" href="./assets/favcon.png" />
+        <link rel="mask-icon" href="./assets/favcon.png" color="#5bbad5" />
+
+        <meta property="og:title" content="SMXTREME" />
+        <meta
+            property="og:description"
+            content="A passionate developer and student exploring the world of code. Check out my projects, skills, and how to connect!"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://smxtreme.github.io/assets/favcon.png" />
+
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="SMXTREME" />
+        <meta
+            name="twitter:description"
+            content="A passionate developer and student exploring the world of code. Check out my projects, skills, and how to connect!"
+        />
+        <meta name="twitter:image" content="https://smxtreme.github.io/assets/favcon.png" />
+        <meta name="twitter:site" content="@SMXTREMEDEV" />
+        <meta name="twitter:creator" content="@SMXTREMEDEV" />
+
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+                color: #ffffff;
+                min-height: 100vh;
+                overflow-x: hidden;
+            }
+
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 2rem;
+            }
+
+            .hero-section {
+                text-align: center;
+                padding: 4rem 0;
+                position: relative;
+            }
+
+            .hero-section::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: radial-gradient(
+                    circle at 50% 50%,
+                    rgba(0, 255, 255, 0.1) 0%,
+                    transparent 50%
+                );
+                pointer-events: none;
+            }
+
+            .profile-image {
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                background: linear-gradient(45deg, #00ffff, #ff00ff, #ffff00);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto 2rem;
+                position: relative;
+                overflow: hidden;
+                animation: glow 2s ease-in-out infinite alternate;
+                padding: 5px;
+            }
+
+            .profile-image img {
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                object-fit: cover;
+                object-position: center;
+            }
+
+            @keyframes glow {
+                from {
+                    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+                }
+                to {
+                    box-shadow: 0 0 40px rgba(255, 0, 255, 0.8);
+                }
+            }
+
+            .main-title {
+                font-size: 3.5rem;
+                font-weight: 900;
+                background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
+                background-size: 400% 400%;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                animation: gradientShift 3s ease infinite;
+                margin-bottom: 1rem;
+            }
+
+            @keyframes gradientShift {
+                0% {
+                    background-position: 0% 50%;
+                }
+                50% {
+                    background-position: 100% 50%;
+                }
+                100% {
+                    background-position: 0% 50%;
+                }
+            }
+
+            .subtitle {
+                font-size: 1.5rem;
+                color: #b0b0b0;
+                margin-bottom: 3rem;
+                font-weight: 300;
+            }
+
+            .section {
+                margin: 4rem 0;
+                padding: 2rem;
+                background: rgba(255, 255, 255, 0.05);
+                border-radius: 20px;
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+
+            .section:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 20px 40px rgba(0, 255, 255, 0.1);
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+                font-weight: 700;
+                margin-bottom: 2rem;
+                color: #00ffff;
+                position: relative;
+            }
+
+            .section-title::after {
+                content: '';
+                position: absolute;
+                bottom: -10px;
+                left: 0;
+                width: 50px;
+                height: 3px;
+                background: linear-gradient(90deg, #00ffff, #ff00ff);
+                border-radius: 2px;
+            }
+
+            .projects-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+                gap: 2rem;
+                margin-top: 2rem;
+            }
+
+            .project-card {
+                background: rgba(255, 255, 255, 0.08);
+                border-radius: 15px;
+                padding: 2rem;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                transition: all 0.3s ease;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .project-card::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(
+                    90deg,
+                    transparent,
+                    rgba(255, 255, 255, 0.1),
+                    transparent
+                );
+                transition: left 0.5s ease;
+            }
+
+            .project-card:hover::before {
+                left: 100%;
+            }
+
+            .project-card:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 15px 30px rgba(0, 255, 255, 0.2);
+                border-color: #00ffff;
+            }
+
+            .project-title {
+                font-size: 1.5rem;
+                font-weight: 600;
+                color: #ffffff;
+                margin-bottom: 1rem;
+                padding-right: 120px; /* Space for badges */
+            }
+
+            .project-description {
+                color: #b0b0b0;
+                margin-bottom: 1.5rem;
+                line-height: 1.6;
+            }
+
+            .project-tags {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .tag {
+                background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+                color: #000;
+                padding: 0.3rem 0.8rem;
+                border-radius: 20px;
+                font-size: 0.8rem;
+                font-weight: 600;
+            }
+
+            .project-links {
+                display: flex;
+                gap: 1rem;
+                flex-wrap: wrap;
+            }
+
+            .project-link {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.5rem;
+                color: #00ffff;
+                text-decoration: none;
+                font-weight: 600;
+                transition: all 0.3s ease;
+                padding: 0.5rem 1rem;
+                border-radius: 8px;
+                background: rgba(255, 255, 255, 0.05);
+                border: 1px solid rgba(0, 255, 255, 0.3);
+            }
+
+            .project-link:hover {
+                color: #ff00ff;
+                transform: translateX(5px);
+                background: rgba(255, 0, 255, 0.1);
+                border-color: #ff00ff;
+            }
+
+            .project-link.website-link {
+                color: #00ff88;
+                border-color: rgba(0, 255, 136, 0.3);
+            }
+
+            .project-link.website-link:hover {
+                color: #ff6b6b;
+                background: rgba(255, 107, 107, 0.1);
+                border-color: #ff6b6b;
+            }
+
+            .private-badge {
+                background: linear-gradient(45deg, #ff9a56, #ff6b9d);
+                color: #000;
+                padding: 0.3rem 0.8rem;
+                border-radius: 15px;
+                font-size: 0.7rem;
+                font-weight: 700;
+                position: absolute;
+                top: 1rem;
+                right: 1rem;
+            }
+
+            .wip-badge {
+                background: linear-gradient(45deg, #ffd700, #ffb347);
+                color: #000;
+                padding: 0.3rem 0.8rem;
+                border-radius: 15px;
+                font-size: 0.7rem;
+                font-weight: 700;
+                position: absolute;
+                top: 1rem;
+                right: 1rem;
+                animation: pulse 2s ease-in-out infinite;
+            }
+
+            @keyframes pulse {
+                0% {
+                    transform: scale(1);
+                }
+                50% {
+                    transform: scale(1.05);
+                }
+                100% {
+                    transform: scale(1);
+                }
+            }
+
+            .status-badge {
+                background: linear-gradient(45deg, #4ecdc4, #44a08d);
+                color: #000;
+                padding: 0.3rem 0.8rem;
+                border-radius: 15px;
+                font-size: 0.7rem;
+                font-weight: 700;
+                position: absolute;
+                top: 1rem;
+                right: 1rem;
+            }
+
+            .multiple-badges {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+                position: absolute;
+                top: 1rem;
+                right: 1rem;
+            }
+
+            .multiple-badges .private-badge,
+            .multiple-badges .wip-badge,
+            .multiple-badges .status-badge {
+                position: relative;
+                top: 0;
+                right: 0;
+            }
+
+            .about-text {
+                font-size: 1.2rem;
+                line-height: 1.8;
+                color: #e0e0e0;
+                text-align: center;
+                max-width: 900px;
+                margin: 0 auto;
+            }
+
+            .social-links {
+                display: flex;
+                justify-content: center;
+                gap: 2rem;
+                margin-top: 3rem;
+            }
+
+            .social-link {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 60px;
+                height: 60px;
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 50%;
+                color: #ffffff;
+                text-decoration: none;
+                font-size: 1.5rem;
+                transition: all 0.3s ease;
+                border: 2px solid transparent;
+            }
+
+            .social-link:hover {
+                background: linear-gradient(45deg, #00ffff, #ff00ff);
+                color: #000;
+                transform: translateY(-5px) rotate(360deg);
+                border-color: #ffffff;
+            }
+
+            .footer {
+                text-align: center;
+                padding: 3rem 0 2rem;
+                margin-top: 4rem;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+                color: #b0b0b0;
+                font-size: 0.9rem;
+            }
+
+            @media (max-width: 768px) {
+                .main-title {
+                    font-size: 2.5rem;
+                }
+
+                .projects-grid {
+                    grid-template-columns: 1fr;
+                }
+
+                .container {
+                    padding: 1rem;
+                }
+
+                /* Mobile-specific badge adjustments */
+                .project-title {
+                    padding-right: 0; /* Remove padding on mobile */
+                    margin-bottom: 0.5rem; /* Reduce bottom margin */
+                }
+
+                .private-badge,
+                .wip-badge,
+                .status-badge {
+                    position: static; /* Make badges part of normal flow */
+                    display: inline-block;
+                    margin: 0.5rem 0.5rem 0.5rem 0; /* Add some spacing */
+                }
+
+                .multiple-badges {
+                    position: static; /* Make container part of normal flow */
+                    flex-direction: row; /* Horizontal layout on mobile */
+                    flex-wrap: wrap;
+                    margin: 0.5rem 0 1rem 0; /* Add vertical spacing */
+                }
+
+                .project-description {
+                    margin-top: 0.5rem; /* Add small top margin */
+                }
+
+                .project-card {
+                    padding: 1.5rem; /* Reduce padding on mobile */
+                }
+            }
+
+            @media (max-width: 480px) {
+                .project-card {
+                    padding: 1rem; /* Further reduce padding on very small screens */
+                }
+
+                .multiple-badges {
+                    gap: 0.3rem; /* Reduce gap between badges */
+                }
+
+                .private-badge,
+                .wip-badge,
+                .status-badge {
+                    font-size: 0.6rem; /* Slightly smaller text */
+                    padding: 0.2rem 0.6rem; /* Reduce padding */
+                }
+            }
+
+            .floating-elements {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+                z-index: -1;
+            }
+
+            .floating-element {
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                background: linear-gradient(45deg, #00ffff, #ff00ff);
+                border-radius: 50%;
+                animation: float 6s ease-in-out infinite;
+            }
+
+            .floating-element:nth-child(1) {
+                top: 10%;
+                left: 10%;
+                animation-delay: 0s;
+            }
+            .floating-element:nth-child(2) {
+                top: 20%;
+                right: 10%;
+                animation-delay: 1s;
+            }
+            .floating-element:nth-child(3) {
+                bottom: 10%;
+                left: 20%;
+                animation-delay: 2s;
+            }
+            .floating-element:nth-child(4) {
+                bottom: 20%;
+                right: 20%;
+                animation-delay: 3s;
+            }
+
+            @keyframes float {
+                0%,
+                100% {
+                    transform: translateY(0px) rotate(0deg);
+                }
+                50% {
+                    transform: translateY(-20px) rotate(180deg);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="floating-elements">
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+        </div>
+
+        <div class="container">
+            <div class="hero-section">
+                <div class="profile-image">
+                    <img src="./assets/favcon.svg" alt="Shubham Maloo (SMXTREME)" />
+                </div>
+                <h1 class="main-title">SMXTREME</h1>
+                <p class="subtitle">Shubham Maloo AKA SMXTREME</p>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">About Me</h2>
+                <p class="about-text">
+                    A passionate developer and student exploring the world of code. I love building
+                    projects, learning new technologies, and turning ideas into reality through
+                    programming. When I'm not studying, you'll find me experimenting with web
+                    development, AI, or game design—always coding something fun!
+                </p>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="multiple-badges">
+                            <div class="private-badge">Private</div>
+                            <div class="wip-badge">🚧 WIP</div>
+                        </div>
+                        <h3 class="project-title">One Piece RPG</h3>
+                        <p class="project-description">
+                            A feature-rich Discord app inspired by the One Piece universe, offering
+                            RPG gameplay, quests, and interactive community events.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Node.js</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">MongoDB</span>
+                            <span class="tag">Redis</span>
+                        </div>
+                        <div class="project-links">
+                            <a
+                                href="#"
+                                class="project-link"
+                                onclick="alert('This is a private repository. Contact for access.')"
+                            >
+                                <i class="fas fa-lock"></i> Private Repository
+                            </a>
+                            <a
+                                href="https://opr.shubhammaloo.xyz"
+                                class="project-link website-link"
+                            >
+                                <i class="fas fa-external-link-alt"></i> Visit Website
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="wip-badge">🚧 WIP</div>
+                        <h3 class="project-title">ELXTREME</h3>
+                        <p class="project-description">
+                            A modern expense logger website for tracking daily spending, visualizing
+                            expenses, and managing budgets with an intuitive dashboard.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Node.js</span>
+                            <span class="tag">Express.js</span>
+                            <span class="tag">EJS</span>
+                            <span class="tag">Redis</span>
+                            <span class="tag">MongoDB</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/SMXTREME/ELXTREME" class="project-link">
+                                <i class="fab fa-github"></i> View on GitHub
+                            </a>
+                            <a
+                                href="https://elxtreme.shubhammaloo.xyz/"
+                                class="project-link website-link"
+                            >
+                                <i class="fas fa-external-link-alt"></i> Visit Website
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="wip-badge">🚧 WIP</div>
+                        <h3 class="project-title">AniXTREME</h3>
+                        <p class="project-description">
+                            Minimal anime streaming and discovery website just browse and watch.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Node.js</span>
+                            <span class="tag">Express.js</span>
+                            <span class="tag">EJS</span>
+                            <span class="tag">Redis</span>
+                            <span class="tag">Redis</span>
+                            <span class="tag">MongoDB</span>
+                        </div>
+                        <div class="project-links">
+                            <a
+                                href="https://github.com/SMXTREME/Anime_Website"
+                                class="project-link"
+                            >
+                                <i class="fab fa-github"></i> View on GitHub
+                            </a>
+                            <a
+                                href="https://anime.shubhammaloo.xyz/"
+                                class="project-link website-link"
+                            >
+                                <i class="fas fa-external-link-alt"></i> Visit Website
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Connect With Me</h2>
+                <div class="social-links">
+                    <a
+                        href="https://github.com/SMXTREME"
+                        class="social-link"
+                        title="GitHub"
+                        target="_blank"
+                    >
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a
+                        href="https://discordapp.com/users/716182133345091684"
+                        class="social-link"
+                        title="Discord"
+                        target="_blank"
+                    >
+                        <i class="fab fa-discord"></i>
+                    </a>
+                    <a
+                        href="mailto:smxtremedev@gmail.com"
+                        class="social-link"
+                        title="Email"
+                        target="_blank"
+                    >
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a
+                        href="https://twitter.com/SMXTREMEDEV"
+                        class="social-link"
+                        title="Twitter"
+                        target="_blank"
+                    >
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">© 2025 Shubham Maloo (SMXTREME). All rights reserved.</div>
+        </footer>
+    </body>
+</html>
