@@ -440,6 +440,10 @@
             }
 
             @media (max-width: 480px) {
+                .about-text {
+                    font-size: 1.1rem; /* Smaller font size for very small screens */
+                }
+
                 .project-card {
                     padding: 1rem; /* Further reduce padding on very small screens */
                 }
@@ -453,6 +457,19 @@
                 .status-badge {
                     font-size: 0.6rem; /* Slightly smaller text */
                     padding: 0.2rem 0.6rem; /* Reduce padding */
+                }
+
+                .social-links {
+                    gap: 1rem;
+                }
+
+                .social-link {
+                    height: 50px;
+                    width: 50px;
+                }
+
+                .section-title {
+                    font-size: 2rem; /* Smaller section title on small screens */
                 }
             }
 
@@ -555,38 +572,11 @@
                         </div>
                         <div class="project-links">
                             <a
-                                href="#"
+                                href="#connect-with-me"
                                 class="project-link"
                                 onclick="alert('This is a private repository. Contact for access.')"
                             >
                                 <i class="fas fa-lock"></i> Private Repository
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="wip-badge">🚧 WIP</div>
-                        <h3 class="project-title">ELXTREME</h3>
-                        <p class="project-description">
-                            A modern expense logger website for tracking daily spending, visualizing
-                            expenses, and managing budgets with an intuitive dashboard.
-                        </p>
-                        <div class="project-tags">
-                            <span class="tag">Node.js</span>
-                            <span class="tag">Express.js</span>
-                            <span class="tag">EJS</span>
-                            <span class="tag">Redis</span>
-                            <span class="tag">MongoDB</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/SMXTREME/ELXTREME" class="project-link">
-                                <i class="fab fa-github"></i> View on GitHub
-                            </a>
-                            <a
-                                href="https://elxtreme.shubhammaloo.xyz/"
-                                class="project-link website-link"
-                            >
-                                <i class="fas fa-external-link-alt"></i> Visit Website
                             </a>
                         </div>
                     </div>
@@ -621,6 +611,60 @@
                     </div>
 
                     <div class="project-card">
+                        <h3 class="project-title">Snake Game</h3>
+                        <p class="project-description">
+                            A classic Snake Game built with HTML, CSS, and JavaScript — no
+                            libraries, no frameworks, just pure front-end fun!
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a
+                                href="https://github.com/SMXTREME/snake-game.git"
+                                class="project-link"
+                            >
+                                <i class="fab fa-github"></i> View on GitHub
+                            </a>
+                            <a
+                                href="https://snake-game.shubhammaloo.xyz/"
+                                class="project-link website-link"
+                            >
+                                <i class="fas fa-external-link-alt"></i> Visit Website
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="wip-badge">🚧 WIP</div>
+                        <h3 class="project-title">ELXTREME</h3>
+                        <p class="project-description">
+                            A modern expense logger website for tracking daily spending, visualizing
+                            expenses, and managing budgets with an intuitive dashboard.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Node.js</span>
+                            <span class="tag">Express.js</span>
+                            <span class="tag">EJS</span>
+                            <span class="tag">Redis</span>
+                            <span class="tag">MongoDB</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/SMXTREME/ELXTREME" class="project-link">
+                                <i class="fab fa-github"></i> View on GitHub
+                            </a>
+                            <a
+                                href="https://elxtreme.shubhammaloo.xyz/"
+                                class="project-link website-link"
+                            >
+                                <i class="fas fa-external-link-alt"></i> Visit Website
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
                         <div class="wip-badge">🚧 WIP</div>
                         <h3 class="project-title">2D Web RPG</h3>
                         <p class="project-description">
@@ -647,7 +691,7 @@
                 </div>
             </div>
 
-            <div class="section">
+            <div class="section" id="connect-with-me">
                 <h2 class="section-title">Connect With Me</h2>
                 <div class="social-links">
                     <a
